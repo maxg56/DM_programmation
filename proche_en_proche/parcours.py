@@ -4,11 +4,10 @@ def arrivee(graphe : dict, depart :int, chemin : list) -> int:
     sommet_actuel = depart
     for etape   in chemin:
         sommet_actuel = graphe[sommet_actuel][etape]
-
     return sommet_actuel
 
 
-def nombre_visites(graphe, depart, chemin):
+def nombre_visites(graphe : dict, depart :int, chemin : list) -> int:
     """Renvoie le nombre de fois que chaque sommet est visité lors du parcours"""
     sommet_actuel = depart
     deja_vu = [depart]
@@ -16,8 +15,6 @@ def nombre_visites(graphe, depart, chemin):
         sommet_actuel = graphe[sommet_actuel][etape]
         if sommet_actuel not in  deja_vu :
             deja_vu.append(sommet_actuel)
-
-
     return len(deja_vu)
 
 

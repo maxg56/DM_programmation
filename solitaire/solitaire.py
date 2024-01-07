@@ -1,6 +1,6 @@
 from pile import Pile
 
-def est_gagnante(pile):
+def est_gagnante(pile : Pile) -> bool:
     """Détermine si la pile est gagnante"""
     while not pile.est_vide():
         sommet1 = pile.depile() 
@@ -11,7 +11,6 @@ def est_gagnante(pile):
             if (sommet1 + sommet2) % 2 != 0:
                 return False
             pile.empile(int((sommet1 + sommet2) / 2))
-
     return False
 
 
