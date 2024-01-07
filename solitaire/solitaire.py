@@ -7,15 +7,13 @@ def est_gagnante(pile):
         if pile.est_vide():
             return True
         else:
-            
             sommet2 = pile.depile()
-
-            if sommet1 // 2 == sommet2 // 2:
-                pile.empile((sommet1 + sommet2) // 2)
-            else:
+            if (sommet1 + sommet2) % 2 != 0:
                 return False
+            pile.empile(int((sommet1 + sommet2) / 2))
 
-    return False  
+    return False
+
 
 # Test 1
 pile1 = Pile()
