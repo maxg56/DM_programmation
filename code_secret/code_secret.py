@@ -1,13 +1,13 @@
 def code_secret(message):
     """Renvoie le code secret caché dans la liste de chaînes"""
-    code_total = 1  # Initialisez à 1 pour pouvoir multiplier
-    for mau in message:
-        premier_chiffre, dernier_chiffre = None, None  # Initialisez à None
-        for i in range(len(mau)):
-            if mau[i].isdigit():
+    code_total = 1  
+    for mots in message:
+        premier_chiffre, dernier_chiffre = None, None  
+        for i in range(len(mots)):
+            if mots[i].isdigit():
                 if premier_chiffre is None:
-                    premier_chiffre = mau[i]
-                dernier_chiffre = mau[i]
+                    premier_chiffre = mots[i]
+                dernier_chiffre = mots[i]
 
         if premier_chiffre is not None and dernier_chiffre is not None:
             code_total *= int(premier_chiffre + dernier_chiffre)
